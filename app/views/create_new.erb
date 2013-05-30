@@ -1,0 +1,24 @@
+<h1> Create a New Event </h1>
+
+<form action="/event/create" method="post" id="create">
+  <div>
+    <input type="hidden" name='event[user_id]' value='<%=current_user.id%>'>
+  </div>
+  <div>
+    <label for="event[name]">Name of Event:</label>
+    <input type="text" name="event[name]">
+  </div>
+  <div>
+    <label for="event[location]">Location:</label>
+    <input type="text" name="event[location]">
+  </div>
+   <div>
+    <label for="event[starts_at]">Starts At:</label>
+    <input type="datetime" name="event[starts_at]">
+  </div>
+   <div>
+    <label for="event[ends_at]">Ends At:</label>
+    <input type="datetime" name="event[ends_at]">
+  </div>
+  <button type="submit">Submit</button>
+</form>

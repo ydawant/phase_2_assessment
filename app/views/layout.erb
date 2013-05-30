@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+
+  <title></title>
+</head>
+<body>
+
+  <header>
+    <h1><a href="/">Event Planning</a></h1>
+    <ul>
+      <% if current_user %>
+      <li>You are logged in as: <a href="/user/<%= current_user.id %>"><%= current_user.first_name %></a></li>
+      <li><a href="/user/signout">Sign Out</a></li>
+      <li><a href='/event/<%=current_user.id%>/create'>Create New</a></li>
+      <% else %>
+      <li><a href="/user/signin">Sign In</a></li>
+      <li><a href="/user/create">Create Account</a></li>
+      <% end %>
+    </ul>
+  </header>
+
+  <div class='container'/>
+    <%= yield %>
+  </div>
+
+</body>
+</html>

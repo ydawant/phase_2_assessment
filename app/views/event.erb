@@ -1,0 +1,12 @@
+<h1> <%= @event.name %> </h1>
+
+<h2> <%= @event.location %> </h2>
+
+<p> This time for this event: <%=@event.starts_at%> - <%= @event.ends_at%> </p>
+
+<%if current_user.id == @event.user_id %>
+
+<p><a href='/event/destroy/<%=@event.id%>'>Destory Event</p>
+<p><a href='/event/edit/<%=@event.id%>'>Edit Event<p>
+
+  <% end %>

@@ -1,0 +1,33 @@
+<p> Create New Account </p>
+
+<% if @errors %>
+  <ul>
+    <% @errors.each do |key, value| %>
+      <li class="error_messages"><%= key %>: <%= value.join(", ") %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/user/create" method="post" id="login">
+  <div>
+    <label for="user[first_name]">First Name:</label>
+    <input type="text" name="user[first_name]">
+  </div>
+  <div>
+    <label for="user[last_name]">Last Name:</label>
+    <input type="text" name="user[last_name]">
+  </div>
+   <div>
+    <label for="user[email]">Email:</label>
+    <input type="text" name="user[email]">
+  </div>
+   <div>
+    <label for="user[birthdate]">Birthdate:</label>
+    <input type="text" name="user[birthdate]">
+  </div>
+   <div>
+    <label for="user[password">Password:</label>
+    <input type="password" name="user[password]">
+  </div>
+  <button type="submit">Submit</button>
+</form>

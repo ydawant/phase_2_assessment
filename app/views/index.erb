@@ -1,0 +1,17 @@
+<div class="container">
+
+Your Events:
+
+<ul>
+  <% current_user.created_events.each do |event| %>
+    <li><a href='/event/<%=event.id%>'><%= event.name %></a></li>
+  <% end %>
+</div>
+
+Your Attended Events:
+
+<ul>
+  <% current_user.attended_events.each do |event_attendance| %>
+    <li><a href ='/event/<%=Event.find(event_attendance.event_id).id%>'><%= Event.find(event_attendance.event_id).name %></a></li>
+  <% end %>
+</div>
